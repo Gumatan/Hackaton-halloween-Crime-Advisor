@@ -8,6 +8,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Nav />
+        <div className="banner"></div>
       </div>
     );
   }
