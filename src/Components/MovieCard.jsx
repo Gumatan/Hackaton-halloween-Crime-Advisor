@@ -2,12 +2,12 @@ import React from "react";
 
 const MovieCard = ({ title, posterUrl, director, year, country }) => (
   <div className="MovieCard">
-    <h2>{title}</h2>
-    <img src={posterUrl} alt={title} />
+    <h2>{title.replace(/\_/gm, " ")}</h2>
+    <img src={posterUrl} alt={title.replace(/\_/gm, " ")} />
     <ul>
-      <li>{director}</li>
+      <li>{director.replace(/\_/gm, " ")}</li>
       <li>{year}</li>
-      <li>{country}</li>
+      <li>{country.replace(/\_/gm, " ")}</li>
     </ul>
   </div>
 );

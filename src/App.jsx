@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       films: null,
-      category: true
+      category: "noFilter"
     };
   }
   getFilms() {
@@ -21,40 +21,45 @@ class App extends React.Component {
       .then(response => response.data)
       // Use this data to update the state
       .then(data => {
-        // data.movies.forEach(film => {
-        //   film.category = filmCategories[film.id];
-        // });
-        console.log(data.movies);
-
         this.setState({
           films: data.movies
         });
       });
   }
   handleClick = event => {
-    const newCategory = event.target.innerText;
-    newCategory.replace(" ", "_");
-    this.setState({ category: newCategory });
+    let newCategory = event.target.innerText;
+    newCategory = newCategory.replace(/\ /gm, "_");
+    console.log(newCategory);
+
+    if (newCategory !== this.state.category) {
+      this.setState({ category: newCategory });
+    } else {
+      this.setState({ category: "noFilter" });
+    }
   };
   componentDidMount() {
     this.getFilms();
   }
 
   render() {
-    console.log();
     return (
       <div className="App">
         <Nav />
-        <div onClick={this.handleClick}>WTF</div>
-        <div onClick={this.handleClick}>Paranormal</div>
-        <div onClick={this.handleClick}>Serial killer</div>
-        <div onClick={this.handleClick}>Several</div>
-        <div onClick={this.handleClick}>Monstres</div>
-        <div onClick={this.handleClick}>Brutal</div>
+        <div className="categories">
+          <div onClick={this.handleClick}>WTF</div>
+          <div onClick={this.handleClick}>Paranormal</div>
+          <div onClick={this.handleClick}>Serial killer</div>
+          <div onClick={this.handleClick}>Several</div>
+          <div onClick={this.handleClick}>Monstres</div>
+          <div onClick={this.handleClick}>Brutal</div>
+        </div>
+
         {this.state.films ? (
           this.state.films
-            .filter(film =>
-              moviesCategories[this.state.category].includes(film.id)
+            .filter(
+              film =>
+                this.state.category === "noFilter" ||
+                moviesCategories[this.state.category].includes(film.id)
             )
             .map(film => <MovieCard {...film} />)
         ) : (
