@@ -1,6 +1,6 @@
 import "./reset.css";
 import React from "react";
-import Nav from "./Components/Nav";
+//import Nav from "./Components/Nav";
 import Main from "./Components/Main";
 import Slogan from "./Components/Slogan";
 import "./App.scss";
