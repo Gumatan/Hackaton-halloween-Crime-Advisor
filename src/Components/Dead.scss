@@ -1,5 +1,5 @@
 #dead {
-  height: 100vh;
+  // height: 100vh;
   background-color: black;
   font-family: "ZCOOL XiaoWei", serif;
 }
@@ -20,5 +20,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 50px;
+  margin: 15px auto;
+  h2 {
+    width: 100%;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }

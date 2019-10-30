@@ -12,7 +12,7 @@ class Dead extends React.Component {
     this.state = {
       click: true,
       films: null,
-      category: "noFilter"
+      category: "All"
     };
   }
 
@@ -36,7 +36,7 @@ class Dead extends React.Component {
     if (newCategory !== this.state.category) {
       this.setState({ category: newCategory });
     } else {
-      this.setState({ category: "noFilter" });
+      this.setState({ category: "All" });
     }
   };
   componentDidMount() {
@@ -52,16 +52,17 @@ class Dead extends React.Component {
           <Categories />
         ) : (
           <div id="movie_panel">
+            <h2>{this.state.category}</h2>
             {this.state.films ? (
               this.state.films
                 .filter(
                   film =>
-                    this.state.category === "noFilter" ||
+                    this.state.category === "All" ||
                     moviesCategories[this.state.category].includes(film.id)
                 )
                 .map(film => <Movies {...film} />)
             ) : (
-              <p>no data yet</p>
+              <h2>Loading</h2>
             )}
           </div>
         )}

@@ -5,13 +5,10 @@ class Movies extends React.Component {
   render() {
     return (
       <div className="movie_card">
-        <img
-          src="https://nsa40.casimages.com/img/2019/10/07/1910070355402418.jpg"
-          alt="movie poster"
-        />
+        <img src={this.props.posterUrl} alt="movie poster" />
         <div className="movie_infos">
-          <h3>Hereditary</h3>
-          <p>By Ari Aster</p>
+          <h3>{this.props.title.replace(/\_/gm, " ")}</h3>
+          <p>By {this.props.director.replace(/\_/gm, " ")}</p>
           <div className="price">
             <p>Price :</p>
             <p>3000€</p>
