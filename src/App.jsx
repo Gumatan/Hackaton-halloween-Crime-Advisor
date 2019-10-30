@@ -21,12 +21,6 @@ class App extends React.Component {
       .then(response => response.data)
       // Use this data to update the state
       .then(data => {
-        // data.movies.forEach(film => {
-        //   film.category = filmCategories[film.id];
-        // });
-        console.log(data.movies);
-        console.log();
-
         this.setState({
           films: data.movies
         });
@@ -34,7 +28,9 @@ class App extends React.Component {
   }
   handleClick = event => {
     let newCategory = event.target.innerText;
-    newCategory = newCategory.replace(" ", "_");
+    newCategory = newCategory.replace(/\ /gm, "_");
+    console.log(newCategory);
+
     if (newCategory !== this.state.category) {
       this.setState({ category: newCategory });
     } else {
@@ -46,7 +42,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log();
     return (
       <div className="App">
         <Nav />
