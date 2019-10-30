@@ -6,10 +6,10 @@ class Main extends React.Component {
     super(props);
     this.state = {
       imgs: [
-        "./images/thunder.gif",
-        "./images/doll.gif",
         "./images/lamort.gif",
-        "./images/fille.gif"
+        "./images/doll.gif",
+        "./images/fille.gif",
+        "./images/thunder.gif"
       ],
       i: 0,
       imgSrc: "./images/thunder.gif"
