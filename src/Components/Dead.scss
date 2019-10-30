@@ -2,6 +2,19 @@
   // height: 100vh;
   background-color: black;
   font-family: "ZCOOL XiaoWei", serif;
+  #choice {
+    position: relative;
+    top: 50px;
+    left: 95px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background-color: #190302;
+    color: white;
+    box-shadow: 2px 2px 4px black;
+    cursor: pointer;
+  }
 }
 
 .banner {

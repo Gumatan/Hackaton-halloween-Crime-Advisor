@@ -5,7 +5,8 @@ import Categories from "./Categories";
 import Movies from "./Movies";
 import Nav from "./Nav";
 import moviesCategories from "../moviesCategories";
-
+let audio = document.createElement("audio");
+audio.src = "cris.mp3";
 class Dead extends React.Component {
   constructor(props) {
     super(props);
@@ -28,20 +29,29 @@ class Dead extends React.Component {
         });
       });
   }
+
   handleClick = event => {
-    let newCategory = event.target.innerText;
+    let newCategory = event.currentTarget.querySelector("h2").innerText;
     newCategory = newCategory.replace(/\ /gm, "_");
-    console.log(newCategory);
 
     if (newCategory !== this.state.category) {
       this.setState({ category: newCategory });
     } else {
       this.setState({ category: "All" });
     }
+    audio.play();
+    this.setState({
+      click: true
+    });
   };
   componentDidMount() {
     this.getFilms();
   }
+  returnClick = event => {
+    this.setState({
+      click: false
+    });
+  };
 
   render() {
     return (
@@ -49,21 +59,27 @@ class Dead extends React.Component {
         <Nav />
         <div className="banner"></div>
         {!this.state.click ? (
-          <Categories />
+          <Categories handleClick={this.handleClick} />
         ) : (
-          <div id="movie_panel">
-            <h2>{this.state.category}</h2>
-            {this.state.films ? (
-              this.state.films
-                .filter(
-                  film =>
-                    this.state.category === "All" ||
-                    moviesCategories[this.state.category].includes(film.id)
-                )
-                .map(film => <Movies {...film} />)
-            ) : (
-              <h2>Loading</h2>
-            )}
+          <div>
+            <button id="choice" onClick={this.returnClick}>
+              Other choice
+            </button>
+            <div id="movie_panel">
+              <h2>{this.state.category}</h2>
+
+              {this.state.films ? (
+                this.state.films
+                  .filter(
+                    film =>
+                      this.state.category === "All" ||
+                      moviesCategories[this.state.category].includes(film.id)
+                  )
+                  .map(film => <Movies {...film} />)
+              ) : (
+                <h2>Loading</h2>
+              )}
+            </div>
           </div>
         )}
         {}

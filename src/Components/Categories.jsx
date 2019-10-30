@@ -8,7 +8,7 @@ const categorie = [
   },
   {
     image: "zombie.jpg",
-    h2: "Monsters"
+    h2: "Monstres"
   },
   {
     image: "paranormal.jpeg",
@@ -16,7 +16,7 @@ const categorie = [
   },
   {
     image: "scream.jpg",
-    h2: "Serial Killer"
+    h2: "Serial killer"
   },
   {
     image: "mortco.jpeg",
@@ -37,7 +37,7 @@ class Categories extends React.Component {
       <div id="truc">
         {categorie.map(item => {
           return (
-            <div id="container">
+            <div onClick={this.props.handleClick} id="container">
               <img src={item.image}></img>
               <h2 id="nom">{item.h2}</h2>
             </div>
