@@ -1,10 +1,10 @@
-const movieCategories = {
+const moviesCategories = {
   WTF: [],
   Paranormal: [],
-  Tueur_en_serie: [3, 4, 5, 33],
-  A_plusieurs: [],
+  Serial_killer: [],
+  Several: [],
   Monstres: [],
-  Brutal: [17, 18, 19, 20, 21, 22, 23]
+  Brutal: []
 };
 
-export default movieCategories;
+export default moviesCategories;
