@@ -2,19 +2,4 @@
   font-family: "SomethingStrange";
   src: url("/SomethingStrange.ttf") format("truetype");
 }
-body {
-  .App {
-    height: 100vh;
-    background-color: black;
-  }
-}
-.banner {
-  background-image: url("/dripping-blood-transparent-background-1.png");
-  background-repeat: repeat-x;
-  height: 50px;
-  width: 100%;
-  filter: saturate(40%);
-  img {
-    width: 100%;
-  }
-}
+@import url("https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap");
