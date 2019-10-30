@@ -14,3 +14,10 @@
     width: 100%;
   }
 }
+
+#movie_panel {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
