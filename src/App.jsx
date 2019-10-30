@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import "./App.scss";
 import Nav from "./Components/Nav";
-import movieCategories from "./moviesCategories";
+import moviesCategories from "./moviesCategories";
 import MovieCard from "./Components/MovieCard";
 
 class App extends React.Component {
@@ -47,14 +47,14 @@ class App extends React.Component {
         <Nav />
         <div onClick={this.handleClick}>WTF</div>
         <div onClick={this.handleClick}>Paranormal</div>
-        <div onClick={this.handleClick}>Tueur en serie</div>
-        <div onClick={this.handleClick}>A plusieurs</div>
+        <div onClick={this.handleClick}>Serial killer</div>
+        <div onClick={this.handleClick}>Several</div>
         <div onClick={this.handleClick}>Monstres</div>
         <div onClick={this.handleClick}>Brutal</div>
         {this.state.films ? (
           this.state.films
             .filter(film =>
-              movieCategories[this.state.category].includes(film.id)
+              moviesCategories[this.state.category].includes(film.id)
             )
             .map(film => <MovieCard {...film} />)
         ) : (
