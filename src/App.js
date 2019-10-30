@@ -8,12 +8,10 @@ import "./App.scss";
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Main />
-          <Slogan />
-        </div>
-      </Router>
+      <div className="App">
+        <Main />
+        <Slogan />
+      </div>
     );
   }
 }
