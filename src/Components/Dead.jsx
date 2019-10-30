@@ -60,7 +60,9 @@ class Dead extends React.Component {
                     this.state.category === "All" ||
                     moviesCategories[this.state.category].includes(film.id)
                 )
-                .map(film => <Movies {...film} />)
+                .map(film => (
+                  <Movies {...film} category={this.state.category} />
+                ))
             ) : (
               <h2>Loading</h2>
             )}
