@@ -8,7 +8,7 @@ class Dead extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: null
+      click: true
     };
   }
   render() {
@@ -16,7 +16,14 @@ class Dead extends React.Component {
       <div id="dead">
         <Nav />
         <div className="banner"></div>
-        {!this.state.click ? <Categories /> : <Movies />}
+        {!this.state.click ? (
+          <Categories />
+        ) : (
+          <div id="movie_panel">
+            <Movies />
+            <Movies />
+          </div>
+        )}
         {}
       </div>
     );
