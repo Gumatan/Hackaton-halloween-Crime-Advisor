@@ -1,0 +1,24 @@
+#dead {
+  height: 100vh;
+  background-color: black;
+  font-family: "ZCOOL XiaoWei", serif;
+}
+
+.banner {
+  background-image: url("/dripping-blood-transparent-background-1.png");
+  background-repeat: repeat-x;
+  height: 50px;
+  width: 100%;
+  filter: saturate(40%);
+  img {
+    width: 100%;
+  }
+}
+
+#movie_panel {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
