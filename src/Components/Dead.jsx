@@ -63,7 +63,7 @@ class Dead extends React.Component {
               Other choice
             </button>
             <div id="movie_panel">
-              <h2>{this.state.category}</h2>
+              <h2>{this.state.category.replace(/\_/gm, " ")}</h2>
 
               {this.state.films ? (
                 this.state.films

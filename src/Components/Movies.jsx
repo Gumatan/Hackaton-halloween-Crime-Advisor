@@ -50,7 +50,7 @@ class Movies extends React.Component {
       case "Paranormal":
         price = "8 000";
         break;
-      case "Serial killer":
+      case "Serial_killer":
         price = "6 000";
         break;
       case "Several":
