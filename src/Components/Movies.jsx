@@ -42,6 +42,7 @@ class Movies extends React.Component {
 
   sayConfirm() {
     document.getElementById("reponseForm").style.display = "block";
+    document.getElementById("formulaire").style.display = "none";
   }
 
   render() {
@@ -145,11 +146,11 @@ class Movies extends React.Component {
                     />
                     <p onClick={this.sayConfirm}>Submit</p>
                   </form>
-                  <p id="reponseForm">
-                    Your request has been sent, a reply on your email will be
-                    sent as soon as possible to arrange a date with you.
-                  </p>
                 </div>
+                <p id="reponseForm">
+                  Your request has been sent, a reply on your email will be sent
+                  as soon as possible to arrange a date with you.
+                </p>
               </div>
             </div>
           </div>

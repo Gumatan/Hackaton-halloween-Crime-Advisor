@@ -91,17 +91,13 @@
 #truc2truc {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  #formulaire {
-    width: 600px;
-  }
 
   form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: space-around;
-    height: 180px;
+    height: 400px;
+    margin-bottom: 10px;
     .top-form {
       display: flex;
       justify-content: space-between;
@@ -111,36 +107,42 @@
       width: 250px;
       padding: 10px;
       border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     textarea {
-      width: 96.3%;
+      width: 96%;
       padding: 10px;
       border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     select {
-      width: 100%;
+      width: 600px;
       padding: 10px;
       font-weight: bold;
       border-radius: 5px;
+      margin-bottom: 10px;
       #object {
         font-weight: bold;
       }
     }
-
     p {
-      width: 100px;
-      height: 20px;
-      border-radius: 5px;
       background-color: white;
       text-align: center;
       cursor: pointer;
+      margin-bottom: 10px;
+      width: 100px;
+      height: 20px;
+      border-radius: 5px;
     }
   }
 
   #reponseForm {
     display: none;
     color: white;
+    font-size: xx-large;
+    width: 50%;
+    height: auto;
   }
 }
