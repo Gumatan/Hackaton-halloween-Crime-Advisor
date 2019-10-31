@@ -79,8 +79,8 @@
   display: flex;
   width: 100%;
   img {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -109,6 +109,7 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
+      padding-top: 10px;
       h3 {
         font-size: 20px;
       }
