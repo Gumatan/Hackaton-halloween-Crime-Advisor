@@ -1,0 +1,16 @@
+#sang {
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  position: absolute;
+  visibility: hidden;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  background-color: black;
+  opacity: 0;
+  transition: visibility 0s, opacity 1.5s linear;
+  img {
+    width: 50%;
+  }
+}

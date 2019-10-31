@@ -5,15 +5,18 @@ import Categories from "./Categories";
 import Movies from "./Movies";
 import Nav from "./Nav";
 import moviesCategories from "../moviesCategories";
+import Sang from "./Sang";
 let audio = document.createElement("audio");
 audio.src = "cris.mp3";
+
 class Dead extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       click: false,
       films: null,
-      category: "All"
+      category: "All",
+      sang: false
     };
   }
 
@@ -33,13 +36,22 @@ class Dead extends React.Component {
   handleClick = event => {
     let newCategory = event.currentTarget.querySelector("h2").innerText;
     newCategory = newCategory.replace(/\ /gm, "_");
-
-    this.setState({ category: newCategory });
-
     audio.play();
-    this.setState({
-      click: true
-    });
+    const sang = document.getElementById("sang");
+
+    sang.style.visibility = "visible";
+    sang.style.opacity = 1;
+    setTimeout(() => {
+      this.setState({
+        category: newCategory,
+        sang: true,
+        click: true
+      });
+      sang.style.opacity = 0;
+      setTimeout(() => {
+        sang.style.visibility = "hidden";
+      }, 1000);
+    }, 3800);
   };
   componentDidMount() {
     this.getFilms();
@@ -53,8 +65,11 @@ class Dead extends React.Component {
   render() {
     return (
       <div id="dead">
+        <Sang />
         <Nav />
+
         <div className="banner"></div>
+
         {!this.state.click ? (
           <Categories handleClick={this.handleClick} />
         ) : (
