@@ -149,7 +149,7 @@ class Movies extends React.Component {
                 </div>
                 <p id="reponseForm">
                   Your request has been sent, a reply on your email will be sent
-                  as soon as possible to arrange a date with you.
+                  as soon as possible to arrange a date and payment with you !
                 </p>
               </div>
             </div>
