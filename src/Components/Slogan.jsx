@@ -1,8 +1,10 @@
 import React from "react";
 import "./Slogan.scss";
+import { Link } from "react-router-dom";
 
 function Slogan() {
   return (
+    
     <div className="main">
       <img
         className="logo"

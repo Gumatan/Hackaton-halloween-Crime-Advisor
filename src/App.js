@@ -1,16 +1,18 @@
 import "./reset.css";
 import React from "react";
-//import Nav from "./Components/Nav";
-import Main from "./Components/Main";
-import Slogan from "./Components/Slogan";
+import { Switch, Route } from "react-router-dom";
+import Dead from "./Components/Dead";
 import "./App.scss";
+import Mainpage from "./Components/Mainpage";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Main />
-        <Slogan />
+        <Switch>
+          <Route exact path="/" component={Mainpage} />
+          <Route path="/dead" component={Dead} />
+        </Switch>
       </div>
     );
   }
