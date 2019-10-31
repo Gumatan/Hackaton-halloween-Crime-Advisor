@@ -95,6 +95,7 @@
   #formulaire {
     width: 600px;
   }
+
   form {
     display: flex;
     flex-direction: column;
@@ -105,20 +106,19 @@
       display: flex;
       justify-content: space-between;
     }
-    .bottom-form {
-      display: flex;
-      justify-content: space-between;
-    }
+
     input {
       width: 250px;
       padding: 10px;
       border-radius: 5px;
     }
+
     textarea {
       width: 96.3%;
       padding: 10px;
       border-radius: 5px;
     }
+
     select {
       width: 100%;
       padding: 10px;
@@ -128,5 +128,19 @@
         font-weight: bold;
       }
     }
+
+    p {
+      width: 100px;
+      height: 20px;
+      border-radius: 5px;
+      background-color: white;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  #reponseForm {
+    display: none;
+    color: white;
   }
 }

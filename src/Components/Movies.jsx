@@ -40,6 +40,10 @@ class Movies extends React.Component {
     this.setState({ select: event.target.select });
   }
 
+  sayConfirm() {
+    document.getElementById("reponseForm").style.display = "block";
+  }
+
   render() {
     let price = "";
 
@@ -139,7 +143,12 @@ class Movies extends React.Component {
                       placeholder="Your message...."
                       id="message"
                     />
+                    <p onClick={this.sayConfirm}>Submit</p>
                   </form>
+                  <p id="reponseForm">
+                    Your request has been sent, a reply on your email will be
+                    sent as soon as possible to arrange a date with you.
+                  </p>
                 </div>
               </div>
             </div>
