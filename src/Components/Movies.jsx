@@ -1,20 +1,43 @@
 import React from "react";
 import "./Movies.scss";
-import { tsImportEqualsDeclaration } from "@babel/types";
 
 class Movies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      email: "",
+      select: "object",
+      textarea: "",
+      name: ""
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleTextarea = this.handleTextarea.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleName = this.handleName.bind(this);
   }
 
   handleClick() {
     this.setState({
       showModal: !this.state.showModal
     });
+  }
+
+  handleName(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  handleTextarea(event) {
+    this.setState({ textarea: event.target.textarea });
+  }
+
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+
+  handleSelect(event) {
+    this.setState({ select: event.target.select });
   }
 
   render() {
@@ -64,13 +87,59 @@ class Movies extends React.Component {
               <div className="closebuttonconteneur">
                 <img src="close.png" alt="****" onClick={this.handleClick} />
               </div>
-              <div>
-                <img src={this.props.posterUrl} alt="movie poster" />
-                <h3>{this.props.title.replace(/\_/gm, " ")}</h3>
-                <p>By {this.props.director.replace(/\_/gm, " ")}</p>
-                <div className="price">
-                  <p>Price :</p>
-                  <p>{price} €</p>
+              <div id="truc2truc">
+                <div>
+                  <img src={this.props.posterUrl} alt="movie poster" />
+                  <h3>{this.props.title.replace(/\_/gm, " ")}</h3>
+                  <p>By {this.props.director.replace(/\_/gm, " ")}</p>
+                  <div className="price">
+                    <p>Price :</p>
+                    <p>{price} €</p>
+                  </div>
+                </div>
+                <div id="formulaire">
+                  <form>
+                    <div className="top-form">
+                      <input
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.handleName}
+                        placeholder="Your Name..."
+                        id="name"
+                      />
+
+                      <input
+                        type="email"
+                        value={this.state.email}
+                        onChange={this.handleEmail}
+                        placeholder="Your email address...."
+                        id="email"
+                      />
+                    </div>
+                    <select
+                      value={this.state.select}
+                      onChange={this.handleSelect}
+                      id="select"
+                    >
+                      <option value="object" id="object">
+                        Your Categories ?
+                      </option>
+                      <option value="feedback">WTF</option>
+                      <option value="feedback">Paranormal</option>
+                      <option value="feedback">Serial killer</option>
+                      <option value="feedback">Several</option>
+                      <option value="question">Monstres</option>
+                      <option value="bugQuestion">Brutal</option>
+                    </select>
+
+                    <textarea
+                      type="text"
+                      value={this.state.textarea}
+                      onChange={this.handleTextarea}
+                      placeholder="Your message...."
+                      id="message"
+                    />
+                  </form>
                 </div>
               </div>
             </div>
