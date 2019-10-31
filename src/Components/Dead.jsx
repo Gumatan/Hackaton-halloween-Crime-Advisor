@@ -10,7 +10,7 @@ class Dead extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: false,
+      click: true,
       films: null,
       category: "All"
     };
