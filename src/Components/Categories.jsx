@@ -35,6 +35,7 @@ class Categories extends React.Component {
   render() {
     return (
       <div id="truc">
+        <h1>Types of death : </h1>
         {categorie.map(item => {
           return (
             <div onClick={this.props.handleClick} id="container">

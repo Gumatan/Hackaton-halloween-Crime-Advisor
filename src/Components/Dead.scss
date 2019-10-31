@@ -1,5 +1,5 @@
 #dead {
-  // height: 100vh;
+  min-height: 100vh;
   background-color: black;
   font-family: "ZCOOL XiaoWei", serif;
   #choice {
@@ -20,7 +20,7 @@
 .banner {
   background-image: url("/dripping-blood-transparent-background-1.png");
   background-repeat: repeat-x;
-  height: 50px;
+  height: 35px;
   width: 100%;
   filter: saturate(40%);
   img {
@@ -37,7 +37,7 @@
   h2 {
     width: 100%;
     color: white;
-    font-size: 26px;
+    font-size: 34px;
     text-align: center;
     margin-bottom: 30px;
   }
