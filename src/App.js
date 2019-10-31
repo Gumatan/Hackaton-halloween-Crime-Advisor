@@ -1,13 +1,18 @@
 import "./reset.css";
 import React from "react";
-import Nav from "./Components/Nav";
+import { Switch, Route } from "react-router-dom";
+import Dead from "./Components/Dead";
 import "./App.scss";
+import Mainpage from "./Components/Mainpage";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Switch>
+          <Route exact path="/" component={Mainpage} />
+          <Route path="/dead" component={Dead} />
+        </Switch>
       </div>
     );
   }

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "SomethingStrange";
+  src: url("/SomethingStrange.ttf") format("truetype");
+}
+body {
+  background-color: rgb(46, 6, 3);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slogan {
+  padding-top: 20px;
+  width: 20%;
+  height: 5%;
+  font-size: 25px;
+  text-align: center;
+  font-family: "SomethingStrange";
+  color: white;
+  background-color: rgb(46, 6, 3);
+  border: 1px white solid;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.logo {
+  margin-bottom: 10px;
+  z-index: 1;
+  width: 10%;
+}
+
+.text-explicatif {
+  padding-top: 10px;
+  z-index: 1;
+  color: gainsboro;
+  font-size: 15px;
+  font-family: "ZCOOL XiaoWei", serif;
+  text-align: justify;
+}
