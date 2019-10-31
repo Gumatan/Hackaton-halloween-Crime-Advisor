@@ -1,11 +1,9 @@
 import React from "react";
-//import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Slogan.scss";
 
 function Slogan() {
   return (
     <div className="main">
-      {/*<Link to="./Dead">*/}
       <img
         className="logo"
         src="./images/LogoCrimeAdvisor.png"
@@ -16,7 +14,6 @@ function Slogan() {
         <p>Vous rêvez d'une fin digne d'un film d'horreur? </p>
         <p>Notre équipe de Death experts vous accompagne.</p>
       </div>
-      {/*</Link>*/}
     </div>
   );
 }
