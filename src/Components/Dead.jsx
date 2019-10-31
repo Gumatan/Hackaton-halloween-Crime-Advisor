@@ -34,11 +34,8 @@ class Dead extends React.Component {
     let newCategory = event.currentTarget.querySelector("h2").innerText;
     newCategory = newCategory.replace(/\ /gm, "_");
 
-    if (newCategory !== this.state.category) {
-      this.setState({ category: newCategory });
-    } else {
-      this.setState({ category: "All" });
-    }
+    this.setState({ category: newCategory });
+
     audio.play();
     this.setState({
       click: true
@@ -75,7 +72,9 @@ class Dead extends React.Component {
                       this.state.category === "All" ||
                       moviesCategories[this.state.category].includes(film.id)
                   )
-                  .map(film => <Movies {...film} />)
+                  .map(film => (
+                    <Movies {...film} category={this.state.category} />
+                  ))
               ) : (
                 <h2>Loading</h2>
               )}
