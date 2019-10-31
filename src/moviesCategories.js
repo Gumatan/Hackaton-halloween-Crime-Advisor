@@ -89,7 +89,7 @@ const moviesCategories = {
     70,
     69
   ],
-  Monstres: [
+  Monsters: [
     1,
     15,
     16,
