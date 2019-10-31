@@ -8,7 +8,7 @@ const categorie = [
   },
   {
     image: "zombie.jpg",
-    h2: "Monstres"
+    h2: "Monsters"
   },
   {
     image: "paranormal.jpeg",

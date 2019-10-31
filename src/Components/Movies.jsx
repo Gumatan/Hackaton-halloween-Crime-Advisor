@@ -93,16 +93,22 @@ class Movies extends React.Component {
                 <img src="close.png" alt="****" onClick={this.handleClick} />
               </div>
               <div id="truc2truc">
-                <div>
+                <div className="infos_movie">
                   <img src={this.props.posterUrl} alt="movie poster" />
-                  <h3>{this.props.title.replace(/\_/gm, " ")}</h3>
-                  <p>By {this.props.director.replace(/\_/gm, " ")}</p>
-                  <div className="price">
-                    <p>Price :</p>
-                    <p>{price} €</p>
+                  <div className="infos_container">
+                    <div>
+                      <h3>{this.props.title.replace(/\_/gm, " ")}</h3>
+                      <p>By {this.props.director.replace(/\_/gm, " ")}</p>
+                    </div>
+
+                    <div className="price">
+                      <p>Price :</p>
+                      <p>{price} €</p>
+                    </div>
                   </div>
                 </div>
                 <div id="formulaire">
+                  <h3>Book your death :</h3>
                   <form>
                     <div className="top-form">
                       <input
